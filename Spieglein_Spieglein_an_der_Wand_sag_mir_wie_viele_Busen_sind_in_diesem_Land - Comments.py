@@ -23,7 +23,7 @@ def Find_Sublinks():
     for link in soup.find_all('a', href=True): #finding all .html links
         subLinks = link['href']
         AllLinks.append(subLinks) #creating a list of all the links
-    global chapters #global so we can access it from another variable
+    global chapters #global so we can access it from another func
     chapters = [idx for idx in AllLinks if idx[0].lower() == checkLink.lower()] #filtering the list of links by using a filter that removes all links that don't start with c
     Go_to_Chapters()
 
